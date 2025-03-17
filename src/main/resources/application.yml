@@ -46,7 +46,7 @@ spring:
 #    需要持久化的，用来存放热门点击等
     app:
       host: 127.0.0.1
-      password: putaoputao
+      password:
       database: 1
       port: 6379
       pool:

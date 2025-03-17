@@ -1,6 +1,9 @@
 package com.putao_seo.api.service;
 
+import com.putao_seo.api.controller.TestQueryController;
 import com.putao_seo.api.mapper.PartitionOptMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -8,46 +11,46 @@ import java.util.Map;
 @Service
 public class ReturnTestService {
 
+    private static final Logger logger = LoggerFactory.getLogger(ReturnTestService.class);
+
     @Resource
     PartitionOptMapper partitionOptMapper;
 
     public void showCreateTable() {
 
-        String tableNameWithoutPar = "yd_user";
-        String tableNamePar = "orders_par";
-        Map<String, String> withOutParTable = partitionOptMapper.showCreateTable(tableNameWithoutPar);
-        Map<String, String> withParTable = partitionOptMapper.showCreateTable(tableNamePar);
+        String tableWithoutPartition = "yd_user";
+        String tableHavePartition = "orders_par";
+        Map<String, String> withOutParTable = partitionOptMapper.showCreateTable(tableWithoutPartition);
+        Map<String, String> withParTable = partitionOptMapper.showCreateTable(tableHavePartition);
 
-        System.out.println("with partition table:");
+        logger.info("have partition table:");
         for (Map.Entry<String, String> entity: withParTable.entrySet()) {
-            System.out.println("key:  " + entity.getKey());
-            System.out.println("val: " + entity.getValue());
+            logger.info("key: {}, value: {} ", entity.getKey(), entity.getValue());
         }
         System.out.println("without partition table:");
-        withOutParTable.entrySet().stream().
-                forEach(entity -> System.out.println("key:  " + entity.getKey() + ", val: " + entity.getValue()));
+        withOutParTable.forEach((key, value) -> System.out.println("key:  " + key + ", val: " + value));
 
-        showPartitionTable();
+
 
     }
 
     public void showPartitionTable() {
         System.out.println("showPartitionTable:::::::::::::::::::::");
 
-        String tableNameWithoutPar = "yd_user";
-        String tableNamePar = "orders_par";
-        Map<String, String> showWithOutTable = partitionOptMapper.showPartitionTable(tableNameWithoutPar);
-        Map<String, String> showPartitionTable = partitionOptMapper.showPartitionTable(tableNamePar);
+        String tableWithoutPartition = "yd_user";
+        String tableHavePartition = "orders_par";
+        //error sql statement
+        Map<String, String> showWithOutTable = partitionOptMapper.showPartitionTable(tableWithoutPartition);
+        Map<String, String> showPartitionTable = partitionOptMapper.showPartitionTable(tableHavePartition);
 
-        System.out.println("with partition table:");
+        logger.info("have partition table:");
         for (Map.Entry<String, String> entity: showPartitionTable.entrySet()) {
-            System.out.println("key:  " + entity.getKey());
-            System.out.println("val: " + entity.getValue());
+            logger.info("key: {}, value: {} ", entity.getKey(), entity.getValue());
         }
         System.out.println("without partition table:");
-        showWithOutTable.entrySet().stream().
-                forEach(entity -> System.out.println("key:  " + entity.getKey() + ", val: " + entity.getValue()));
-
+        for (Map.Entry<String, String> entity : showWithOutTable.entrySet()) {
+            logger.info("key: {}, value: {} ", entity.getKey(), entity.getValue());
+        }
 
 
     }

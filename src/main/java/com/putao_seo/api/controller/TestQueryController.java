@@ -18,13 +18,13 @@ import java.util.Map;
  */
 @CrossOrigin(origins = "*", maxAge = 3600) //支持跨域
 @RestController
-@RequestMapping(path = "/seoregion", produces = {"application/json;charset=UTF-8"})
+@RequestMapping(path = "/test_query", produces = {"application/json;charset=UTF-8"})
 public class TestQueryController {
 
     private static final Logger logger = LoggerFactory.getLogger(TestQueryController.class);
 
     @Autowired
-    ReturnTestService returnTestService;
+    private ReturnTestService returnTestService;
 
     @GetMapping(value = "/abc")
     public BaseBizResult<Map<String,Object>> queryShowCreateTable(@RequestParam(value = "regionCode",required = false)String regionCode,
@@ -33,6 +33,7 @@ public class TestQueryController {
         try {
             Map<String, Object> map = new HashMap<String, Object>();
             returnTestService.showCreateTable();
+            returnTestService.showPartitionTable();
 
             return BaseBizResult.success(map);
         } catch (Exception e) {
