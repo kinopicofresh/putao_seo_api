@@ -23,7 +23,7 @@ import java.util.*;
 @RequestMapping(path = "/seoregion", produces = {"application/json;charset=UTF-8"})
 public class SeoRegionController {
 
-    private static Logger logger = LoggerFactory.getLogger(SeoRegionController.class);
+    private static final Logger logger = LoggerFactory.getLogger(SeoRegionController.class);
     @Autowired
     SeoRegionService seoRegionService;
 

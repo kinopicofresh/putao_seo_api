@@ -14,9 +14,9 @@ spring:
   application:
     name: putao_seo
   datasource:
-    url: jdbc:mysql://localhost:3306/testdb?characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/test_db?characterEncoding=UTF-8
     username: root
-    password: 12345678
+    password: Ttl@20241128
 #    url: jdbc:mysql://172.21.0.12:3306/seo?characterEncoding=UTF-8
 #    username: seoUser
 #    password: m6i1m2a3

@@ -1,6 +1,6 @@
 package com.putao_seo.api.constants;
 
-import org.springframework.data.elasticsearch.annotations.Document;
+//import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.time.format.DateTimeFormatter;
 

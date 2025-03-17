@@ -1,6 +1,6 @@
 package com.putao_seo.api.entity;
 
-import org.springframework.data.elasticsearch.annotations.Document;
+//import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.io.Serializable;
 import java.time.LocalDate;

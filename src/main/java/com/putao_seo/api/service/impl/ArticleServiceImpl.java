@@ -5,12 +5,12 @@ import com.putao_seo.api.mapper.ArticleMapper;
 import com.putao_seo.api.service.ArticleService;
 import com.putao_seo.api.service.CategoryService;
 import com.putao_seo.api.utils.BaseBizResult;
-import io.searchbox.client.JestClient;
-import io.searchbox.client.JestResult;
-import io.searchbox.core.Search;
-import io.searchbox.core.search.sort.Sort;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.builder.SearchSourceBuilder;
+//import io.searchbox.client.JestClient;
+//import io.searchbox.client.JestResult;
+//import io.searchbox.core.Search;
+//import io.searchbox.core.search.sort.Sort;
+//import org.elasticsearch.index.query.QueryBuilders;
+//import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,9 +31,9 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
     CategoryService categoryService;
-
-    @Autowired
-    private JestClient jestClient;
+//
+//    @Autowired
+//    private JestClient jestClient;
 
     @Override
     public List<Article> getArticleListByCategoryId(Integer categoryId, Integer pageNum, Integer pageSize) {

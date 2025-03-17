@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.putao_seo.api.mapper.PartitionOptMapper">
+
+
+    <select id="showCreateTable" resultType="map">
+        show create table ${tableName}
+    </select>
+
+    <select id="showPartitionTable" resultType="map">
+        SHOW PARTITIONS TABLE ${tableName}
+    </select>
+
+</mapper>
