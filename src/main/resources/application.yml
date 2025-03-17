@@ -41,12 +41,12 @@ spring:
 #      cluster-nodes: localhost:9300
 #      repositories:
 #        enabled: true
-
+# master修改
   redis:
 #    需要持久化的，用来存放热门点击等
     app:
       host: 127.0.0.1
-      password:
+      password: putaoputao
       database: 1
       port: 6379
       pool:
@@ -58,7 +58,7 @@ spring:
 #    存放缓存
     mini:
       host: 127.0.0.1
-      password:
+      password: putaoputao
       database: 0
       port: 6379
       pool:
@@ -79,7 +79,7 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
 
 logging:
-  file: putaoseo.log
+  file: log/putaoseo.log
   level:
     com:
       putao_seo:

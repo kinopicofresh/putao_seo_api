@@ -41,6 +41,13 @@ public class ShopController {
     @Qualifier("appStringRedisTemplate")
     StringRedisTemplate appRedis;
 
+    /**
+     * master
+     * @param shopId
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
     @GetMapping(value = "/detail/{shopId}")
     public BaseBizResult<Map<String, Object>> queryDetail(@PathVariable(value = "shopId", required = true) Long shopId,
                                                           @RequestParam(name = "pageNum", required = false, defaultValue = "1") Integer pageNum,
